@@ -68,8 +68,7 @@
 
     <!-- 1. El reproductor (ponlo justo después de <body>) -->
 <audio id="musicaRef" preload="auto" loop>
-    <source src="mi musica.mp3" type="audio/mpeg">
-    Tu navegador no soporta el audio.
+    <source src="https://www.soundhelix.com" type="audio/mpeg">
 </audio>
 
 <script>
@@ -82,6 +81,8 @@
             console.log("Musica iniciada correctamente");
         }).catch(error => {
             console.log("Error al reproducir: ", error);
+             // Si falla, intentamos de nuevo tras un breve delay
+            setTimeout(() => musica.play(), 100);
         });
 
         // Transición visual
@@ -178,6 +179,7 @@
 </body>
 
 </html>
+
 
 
 
